@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from django.contrib.auth.admin import UserAdmin as AdminUser
-from .models import User
+from .models import User, AuditEntry
 
 
 
@@ -24,3 +24,9 @@ class Users(AdminUser):
     list_display = ("email","is_staff" , "last_login",)
     search_fields = ("email", "first_name", "last_name", )
     ordering = ("email",)
+
+
+@admin.register(AuditEntry)
+class AuditEntryAdmin(admin.ModelAdmin):
+    list_display = ['action', 'username', 'ip', 'date_created']
+    list_filter = ['action',]

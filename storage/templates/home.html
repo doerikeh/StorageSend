@@ -30,15 +30,30 @@
 
           <h1 class="pt-8 pb-3 font-semibold sm:text-lg text-gray-900">
             To Upload
-          </h1>
 
+          </h1>
+         
           <ul id="gallery" class="flex flex-1 flex-wrap -m-1">
             <li id="empty" class="h-full w-full text-center flex flex-col items-center justify-center items-center">
               <img class="mx-auto w-32" src="https://user-images.githubusercontent.com/507615/54591670-ac0a0180-4a65-11e9-846c-e55ffce0fe7b.png" alt="no data" />
               <span class="text-small text-gray-500">No files selected</span>
             </li>
           </ul>
+          <form action="#" method="POST">
+            <div>
+            <div class="mt-1">
+              <label class="inline-flex items-center">
+                <input type="checkbox" class="form-checkbox leading-tight rounded-md h-8 w-8" id="checkbox">
+                <span class="ml-4 text-sm font-medium">Lindungi Dengan Kata Sandi</span>
+              </label>
+            </div>
+            <div id="box">
+              <input type="password" maxlength="32" autocomplete="off" placeholder="Sandi" class="border rounded focus:border-blue-60 leading-normal my-1 py-1 px-2 h-8 dark:bg-grey-80">
+            </div>
+            </div>
+          </form>
         </section>
+        
 
         <!-- sticky footer -->
         <footer class="flex justify-end px-8 pb-8 pt-4">

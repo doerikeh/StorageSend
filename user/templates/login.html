@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock title %}
+{% load static %}
+{% block content %}
+<main class="main">
+    <div class="flex items-center justify-center bg-white z-40 inset-x-0 top-0">
+        <div class="h-full w-full max-h-screen absolute top-0 flex items-center justify-center">
+            <div class="w-full">
+                <div class="flex flex-col lg:flex-row justify-center px-8 md:px-24 w-full h-full">
+                    <img src="{% static 'img/send.svg' %}" alt="" class="h-16 mt-1 mb-4">
+                    <section class="flex flex-col flex-shrink-0 self-center lg:mx-6 lg:max-w-xs">
+                        <h1 class="text-3xl font-bold text-center lg:text-left">
+                            Buat Mengirim File Lebih Aman Masuk Atau Bikin Akun
+                        </h1>
+                        <ul class="leading-normal list-disc text-grey-80 my-2 mt-4 pl-4 md:self-center">
+                            <li>Bagikan berkas kepada lebih banyak orang</li>
+                            <li>Buat tautan aktif selama 7 hari</li>
+                            <li>Kelola berkas yang dibagikan dari perangkat apa pun</li>
+                        </ul>
+                    </section>
+                    <section class="flex flex-col flex-grow m-4 md:self-center md:w-128 lg:max-w-xs">
+                        <form method="POST" action="">{% csrf_token %}
+                            <input placeholder="Masukan Email Anda" type="email" id="id_email" name="email" value="{{ form.email.value|default:''}}" class="border rounded-lg w-full px-2 py-1 h-12 mb-3 text-lg text-grey-70 leading-loose">
+                            <input  placeholder="Masukan password Anda" type="password" class="border rounded-lg w-full px-2 py-1 h-12 mb-3 text-lg text-grey-70 leading-loose" name="password" id="id_password">
+                            <input title="Masuk" value="Masuk" type="submit" class="btn rounded-lg w-full flex flex-shrink-0 items-center justify-center hover:bg-blue-600">
+                        </form>
+                        <div class="flex mt-4 font-sans">
+                            <a class="font-medium hover:text-blue-700" href="{% url 'user:register' %}">Register</a>
+                            <a class="font-medium ml-56 hover:text-blue-700" href="/">Batal</a>
+                        </div>
+                        
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock content %}

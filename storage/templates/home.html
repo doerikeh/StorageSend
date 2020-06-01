@@ -2,6 +2,7 @@
 {% block title %}Storage Send{% endblock %}
 
 {% block content %}
+
 <div class="h-screen w-screen sm:px-8 md:px-16 sm:py-8">
     <main class="container mx-auto max-w-screen-lg h-full">
       <!-- file upload modal -->
@@ -15,7 +16,7 @@
           </i>
           <p class="text-lg text-blue-700">Drop files to upload</p>
         </div>
-
+        
         <!-- scroll area -->
         <section class="h-full overflow-auto p-8 w-full h-full flex flex-col">
           <header class="border-dashed border-2 border-gray-400 py-12 flex flex-col justify-center items-center">
@@ -32,14 +33,12 @@
             To Upload
 
           </h1>
-         
+          
           <ul id="gallery" class="flex flex-1 flex-wrap -m-1">
             <li id="empty" class="h-full w-full text-center flex flex-col items-center justify-center items-center">
-              <img class="mx-auto w-32" src="https://user-images.githubusercontent.com/507615/54591670-ac0a0180-4a65-11e9-846c-e55ffce0fe7b.png" alt="no data" />
-              <span class="text-small text-gray-500">No files selected</span>
+              
             </li>
           </ul>
-          <form action="#" method="POST">
             <div>
             <div class="mt-1">
               <label class="inline-flex items-center">
@@ -51,7 +50,6 @@
               <input type="password" maxlength="32" autocomplete="off" placeholder="Sandi" class="border rounded focus:border-blue-60 leading-normal my-1 py-1 px-2 h-8 dark:bg-grey-80">
             </div>
             </div>
-          </form>
         </section>
         
 
@@ -64,6 +62,7 @@
             Cancel
           </button>
         </footer>
+        
       </article>
     </main>
   </div>
@@ -124,6 +123,8 @@
     </li>
   </template>
 
+  {% endblock content %}
+  {% block javascript %}
 <script>
 const fileTempl = document.getElementById("file-template"),
 imageTempl = document.getElementById("image-template"),
@@ -243,30 +244,4 @@ gallery.append(empty);
 };
 
 </script>
-
-<style>
-.hasImage:hover section {
-background-color: rgba(5, 5, 5, 0.4);
-}
-.hasImage:hover button:hover {
-background: rgba(5, 5, 5, 0.45);
-}
-
-#overlay p,
-i {
-opacity: 0;
-}
-
-#overlay.draggedover {
-background-color: rgba(255, 255, 255, 0.7);
-}
-#overlay.draggedover p,
-#overlay.draggedover i {
-opacity: 1;
-}
-
-.group:hover .group-hover\:text-blue-800 {
-color: #2b6cb0;
-}
-</style>
-{% endblock content %}
+{% endblock javascript %}

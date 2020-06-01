@@ -1,13 +1,13 @@
 function toggleFields(boxId, checkboxId) {
-    var checkbox = document.getElementById(checkboxId);
-    var box = document.getElementById(boxId);
-    checkbox.onclick = function() {
+  var checkbox = document.getElementById(checkboxId);
+  var box = document.getElementById(boxId);
+  checkbox.onclick = function() {
       console.log(this);
       if (this.checked) {
-        box.style['display'] = 'block';
+          box.style['display'] = 'block';
       } else {
-        box.style['display'] = 'none';
+          box.style['display'] = 'none';
       }
-    };
-  }
-  toggleFields('box', 'checkbox');
+  };
+}
+toggleFields('box', 'checkbox');
